@@ -1,6 +1,10 @@
+import { UserEditGuard } from './user/user-edit.guard';
+import { UserEditComponent } from './user/user-edit.component';
+import { UserDetailComponent } from './user/user-detail.component';
+import { UserDetailGuard } from './user/user-detail.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -15,7 +19,11 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { UserComponent} from './user/user.component'
 
-import {routing} from './app.routing'
+import {routing} from './app.routing';
+import { HomeComponent } from './home/home.component';
+import { FormComponent } from './form/form.component';
+import { TemplateDrivenFormComponent } from './form/template-driven-form.component';
+import { DataDrivenFormComponent } from './form/data-driven-form.component'
 
 @NgModule({
   declarations: [
@@ -29,15 +37,22 @@ import {routing} from './app.routing'
     DirectivesComponent,
     HighlightDirective,
     UnlessDirective,
-    UserComponent
+    UserComponent,
+    UserDetailComponent,
+    UserEditComponent,
+    HomeComponent,
+    FormComponent,
+    TemplateDrivenFormComponent,
+    DataDrivenFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     routing
   ],
-  providers: [],
+  providers: [UserDetailGuard, UserEditGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

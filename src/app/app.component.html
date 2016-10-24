@@ -1,34 +1,20 @@
+
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <h1>Hello! Angular Router</h1>
+      <h1>Hello! Angular</h1>
       <hr>
       <a [routerLink]="['/']" [queryParams]="{'analytics':500}" [fragment]="'section1'">Home</a>
       <input type="text" #id (input)="0"/>
       <a [routerLink]="['/user',id.value]" [preserveQueryParams]="true">User</a>
+      <a [routerLink]="['/form']" >ngForm</a>
       <hr>
-      <router-outlet></router-outlet>
-      {{param}}
+
     </div>
 
 
   </div>
+ <router-outlet></router-outlet>
+  {{param}}
 
-  <div class="row">
-    <div class="col-md-6">
-      <fa-directives></fa-directives>
-    </div>
-    <div class="col-md-6">
-
-  </div>
-  <div class="row">
-    <div class="col-md-6"></div>
-    <div class="col-md-6">
-      <h1>DataBinding</h1>
-      <fa-other></fa-other>
-      <fa-another></fa-another>
-      <hr/>
-      <fa-databinding></fa-databinding>
-      </div></div>
-  </div>
 </div>

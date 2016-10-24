@@ -8,10 +8,13 @@ import {Subscription} from 'rxjs/Rx';
   selector: 'app-user-component',
   template: `
       <h1>User Component</h1>
-      
+
       <button (click)="onNavigate()">Go Home</button>
+      <a [routerLink]="['detail']"></a>
       <hr/>
       {{id}}
+      <hr/>
+      <router-outlet></router-outlet>
     `
 })
 export class UserComponent implements OnDestroy {
