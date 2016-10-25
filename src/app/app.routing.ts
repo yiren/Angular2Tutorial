@@ -6,11 +6,13 @@ import {Routes, RouterModule} from "@angular/router";
 
 import {AppComponent} from "./app.component";
 import {UserComponent} from "./user/user.component"
+import { HttpComponent } from './http/http.component';
 
 const APP_ROUTES:Routes=[
   {path:'user/:id', component:UserComponent},
   {path:'user/:id', component:UserComponent, children:USER_ROUTES},
   {path:'form', component:FormComponent, children:FORM_ROUTES},
+  {path:'http', component:HttpComponent},
   {path:'', component:HomeComponent}
 
 ]

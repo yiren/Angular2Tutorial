@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms';
+import {FormGroup, FormControl, Validators, FormArray} from '@angular/forms';
 
 @Component({
   selector: 'app-data-driven-form',
@@ -8,17 +8,46 @@ import {FormGroup, FormControl} from '@angular/forms';
 })
 export class DataDrivenFormComponent implements OnInit {
 
+  genders=[
+    'male',
+    'female'
+  ];
+
   constructor() {
     this.myForm=new FormGroup({
-      'username': new FormControl(),
-      'email': new FormControl(),
-      'password': new FormControl(),
+      'userData':new FormGroup({
+        'username': new FormControl('Goo', [Validators.required, Validators.minLength(4)]),
+        'email': new FormControl('', Validators.required),
+      }),
+      // 'username': new FormControl('Goo', [Validators.required, Validators.minLength(4)]),
+      // 'email': new FormControl('', Validators.required),
+      'password': new FormControl('', [Validators.minLength(5), Validators.required]),
+      'gender':new FormControl(),
+      'hobbies':new FormArray([
+        new FormControl('Cooking')
+      ])
     });
+
+    this.myForm.valueChanges.subscribe(
+      (data)=>console.log(data)
+    );
+
+    this.myForm.statusChanges.subscribe(
+      (data)=>console.log(data)
+    );
   }
 
   ngOnInit() {
+    console.log(this.myForm);
   }
 
   myForm:FormGroup;
 
+  onSubmit(){
+    console.log(this.myForm)
+  }
+
+  onAddHobby(){
+    (<FormArray>this.myForm.controls['hobbies']).push(new FormControl('', Validators.required));
+  }
 }

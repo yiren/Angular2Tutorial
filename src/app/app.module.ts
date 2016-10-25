@@ -23,7 +23,9 @@ import {routing} from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
 import { TemplateDrivenFormComponent } from './form/template-driven-form.component';
-import { DataDrivenFormComponent } from './form/data-driven-form.component'
+import { DataDrivenFormComponent } from './form/data-driven-form.component';
+import { HttpComponent } from './http/http.component'
+import { HttpService } from './http/http.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { DataDrivenFormComponent } from './form/data-driven-form.component'
     HomeComponent,
     FormComponent,
     TemplateDrivenFormComponent,
-    DataDrivenFormComponent
+    DataDrivenFormComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,7 @@ import { DataDrivenFormComponent } from './form/data-driven-form.component'
     ReactiveFormsModule,
     routing
   ],
-  providers: [UserDetailGuard, UserEditGuard],
+  providers: [UserDetailGuard, UserEditGuard, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
