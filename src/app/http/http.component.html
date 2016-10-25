@@ -1,1 +1,11 @@
 <h1>Angular 2 HTTP & Firebase</h1>
+
+<label for="username">Username</label>
+<input type="text" name="username" id="username" #username>
+<label for="email">Email</label>
+<input type="text" name="email" id="email" #email>
+<button (click)="onSubmit(username.value, email.value)">Submit</button>
+<hr>
+<ul>
+  <li></li>
+</ul>
