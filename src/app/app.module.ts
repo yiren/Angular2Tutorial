@@ -1,3 +1,4 @@
+import { FirebaseService } from './firebase.service';
 import { UserEditGuard } from './user/user-edit.guard';
 import { UserEditComponent } from './user/user-edit.component';
 import { UserDetailComponent } from './user/user-detail.component';
@@ -27,6 +28,21 @@ import { DataDrivenFormComponent } from './form/data-driven-form.component';
 import { HttpComponent } from './http/http.component'
 import { HttpService } from './http/http.service';
 
+import {AngularFireModule} from 'angularfire2';
+import { AuthComponent } from './auth/auth.component';
+import { AuthHeaderComponent } from './auth/auth-header.component';
+import { SignUpComponent } from './auth/unprotected/sign-up.component';
+import { SignInComponent } from './auth/unprotected/sign-in.component';
+
+
+const firebaseConfig={
+    apiKey: "AIzaSyBn_OSsAYjT7rxP4Tu-KNoKmEd0IYtFswo",
+    authDomain: "angularauth-850e7.firebaseapp.com",
+    databaseURL: "https://angularauth-850e7.firebaseio.com",
+    storageBucket: "angularauth-850e7.appspot.com",
+    messagingSenderId: "605791227084"
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,16 +62,21 @@ import { HttpService } from './http/http.service';
     FormComponent,
     TemplateDrivenFormComponent,
     DataDrivenFormComponent,
-    HttpComponent
+    HttpComponent,
+    AuthComponent,
+    AuthHeaderComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     routing
   ],
-  providers: [UserDetailGuard, UserEditGuard, HttpService],
+  providers: [UserDetailGuard, UserEditGuard, HttpService, FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
