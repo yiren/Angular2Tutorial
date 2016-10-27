@@ -5,7 +5,10 @@
 <label for="email">Email</label>
 <input type="text" name="email" id="email" #email>
 <button (click)="onSubmit(username.value, email.value)">Submit</button>
+<button (click)="onGetData()">GetOwnData</button>
 <hr>
 <ul>
-  <li></li>
+  <li *ngFor="let item of items">{{item.username}} - {{item.email}}</li>
 </ul>
+<hr>
+<p>{{asyncString|async}}</p>

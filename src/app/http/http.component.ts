@@ -9,6 +9,10 @@ import {Response} from '@angular/http';
 })
 export class HttpComponent implements OnInit {
 
+  items:any[]=[];
+
+
+
   constructor(private httpService:HttpService) { }
 
   ngOnInit() {
@@ -17,11 +21,24 @@ export class HttpComponent implements OnInit {
         (data)=>console.log(data)
       );
   }
+
+  asyncString=this.httpService.getData();
+
   onSubmit(username:string, email:string){
       this.httpService.sendData({username:username, email:email})
         .subscribe((data)=>console.log(data));
   }
-  onGetData(){
 
+  onGetData(){
+    this.httpService.getOwnData()
+        .subscribe((data)=>
+        {
+          console.log(data);
+          const temp:any[]=[];
+          for(let d in data){
+            this.items.push(data[d]);
+            console.log(data[d])
+          }
+        });
   }
 }
