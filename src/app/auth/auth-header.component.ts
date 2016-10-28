@@ -29,7 +29,7 @@ export class AuthHeaderComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    this.subscription.unsubscribe();
+    //this.subscription.unsubscribe();
   }
 
 }

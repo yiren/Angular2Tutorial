@@ -35,6 +35,7 @@ import { AuthHeaderComponent } from './auth/auth-header.component';
 import { SignUpComponent } from './auth/unprotected/sign-up.component';
 import { SignInComponent } from './auth/unprotected/sign-in.component';
 import { ProtectedComponent } from './auth/protected.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 
 const firebaseConfig={
@@ -69,7 +70,8 @@ const firebaseConfig={
     AuthHeaderComponent,
     SignUpComponent,
     SignInComponent,
-    ProtectedComponent
+    ProtectedComponent,
+    PipeComponent
   ],
   imports: [
     BrowserModule,

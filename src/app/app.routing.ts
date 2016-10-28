@@ -1,3 +1,4 @@
+import { PipeComponent } from './pipe/pipe.component';
 import { AUTH_ROUTES } from './auth/auth.route';
 import { AuthComponent } from './auth/auth.component';
 import { FORM_ROUTES } from './form/form.routes';
@@ -15,6 +16,7 @@ const APP_ROUTES:Routes=[
   {path:'user/:id', component:UserComponent, children:USER_ROUTES},
   {path:'form', component:FormComponent, children:FORM_ROUTES},
   {path:'http', component:HttpComponent},
+  {path:'pipe', component:PipeComponent},
   {path:'auth', component:AuthComponent, children:AUTH_ROUTES},
   {path:'', component:HomeComponent}
 
