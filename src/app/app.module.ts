@@ -1,3 +1,4 @@
+import { AuthGuardService } from './auth/auth-guard.service';
 import { FirebaseService } from './firebase.service';
 import { UserEditGuard } from './user/user-edit.guard';
 import { UserEditComponent } from './user/user-edit.component';
@@ -33,6 +34,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthHeaderComponent } from './auth/auth-header.component';
 import { SignUpComponent } from './auth/unprotected/sign-up.component';
 import { SignInComponent } from './auth/unprotected/sign-in.component';
+import { ProtectedComponent } from './auth/protected.component';
 
 
 const firebaseConfig={
@@ -66,7 +68,8 @@ const firebaseConfig={
     AuthComponent,
     AuthHeaderComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,7 @@ const firebaseConfig={
     AngularFireModule.initializeApp(firebaseConfig),
     routing
   ],
-  providers: [UserDetailGuard, UserEditGuard, HttpService, FirebaseService],
+  providers: [UserDetailGuard, UserEditGuard, HttpService, FirebaseService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
