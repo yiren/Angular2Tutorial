@@ -1,3 +1,5 @@
 <p>
-  {{clock | async | date:'yyMMdd'}}
+  {{clock | async | date:'yyyyMMdd HH:mm:ss'}}
 </p>
+
+<button (click)="clock$.next()">Update</button>
