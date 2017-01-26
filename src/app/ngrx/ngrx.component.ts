@@ -20,7 +20,10 @@ export class NgrxComponent implements OnInit {
 
   constructor() {
     //this.clock.subscribe(console.log);
-    this.clock=this.clock$.map(()=>new Date());
+    this.clock=Observable.merge(
+      Observable.interval(3000),
+      this.clock$).map(()=>new Date());
+
   }
 
   ngOnInit() {
