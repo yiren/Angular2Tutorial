@@ -36,6 +36,7 @@ import { SignUpComponent } from './auth/unprotected/sign-up.component';
 import { SignInComponent } from './auth/unprotected/sign-in.component';
 import { ProtectedComponent } from './auth/protected.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { NgrxComponent } from './ngrx/ngrx.component';
 
 
 const firebaseConfig={
@@ -71,7 +72,8 @@ const firebaseConfig={
     SignUpComponent,
     SignInComponent,
     ProtectedComponent,
-    PipeComponent
+    PipeComponent,
+    NgrxComponent
   ],
   imports: [
     BrowserModule,
