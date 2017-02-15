@@ -26,12 +26,11 @@ export class NgrxComponent implements OnInit {
         .startWith(new Date())
         .scan((acc, curr)=>{
           let date=acc;
-          console.log(Date.now()+1)
+          //console.log(Date.now()+1)
           date=new Date(Date.now()+1);
-          console.log(date);
+          //console.log(date);
           return date;
         });
-
   }
 
   ngOnInit() {
