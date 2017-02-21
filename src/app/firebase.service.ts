@@ -1,9 +1,9 @@
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Rx';
-import { User } from './user/user';
-import { Injectable } from '@angular/core';
-import {FirebaseDatabase, AngularFire, FirebaseAuthConfig, FirebaseAuth, AuthProviders, AuthMethods, FirebaseAuthState} from 'angularfire2';
+import {AngularFire, AuthMethods, AuthProviders, FirebaseAuthConfig, FirebaseAuthState} from 'angularfire2';
 
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { Router } from '@angular/router';
+import { User } from './user/user';
 
 @Injectable()
 export class FirebaseService {
