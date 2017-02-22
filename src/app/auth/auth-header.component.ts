@@ -1,7 +1,8 @@
+import { Component, OnInit } from '@angular/core';
+
+import { FirebaseService } from './../firebase.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
-import { FirebaseService } from './../firebase.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-auth-header',

@@ -18,7 +18,7 @@ const APP_ROUTES:Routes=[
   {path:'form', component:FormComponent, children:FORM_ROUTES},
   {path:'http', component:HttpComponent},
   {path:'pipe', component:PipeComponent},
-  //{path:'auth', component:AuthComponent, children:AUTH_ROUTES},
+  {path:'auth', component:AuthComponent, children:AUTH_ROUTES},
   {path:'ngrx', component:NgrxComponent},
   {path:'', component:HomeComponent}
 

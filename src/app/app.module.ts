@@ -18,7 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpComponent } from './http/http.component'
 import { HttpModule } from '@angular/http';
 import { HttpService } from './http/http.service';
-import {MaterialModule} from '@angular/material';
+import { MaterialComponent } from './material/material.component';
+import {MdlModule} from 'angular2-mdl';
 import { NgModule } from '@angular/core';
 import { NgrxComponent } from './ngrx/ngrx.component';
 import { OtherComponent } from './other/other.component';
@@ -71,7 +72,8 @@ const firebaseConfig={
     SignInComponent,
     ProtectedComponent,
     PipeComponent,
-    NgrxComponent
+    NgrxComponent,
+    MaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +82,7 @@ const firebaseConfig={
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     routing,
-    MaterialModule
+    MdlModule
 
   ],
   providers: [UserDetailGuard, UserEditGuard, HttpService, FirebaseService,AuthGuardService],
