@@ -1,17 +1,24 @@
-<div class="demo-container" mdl-shadow="2">
+<div mdl-shadow="2">
    <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
       <mdl-layout-header>
          <mdl-layout-header-row>
-            <mdl-layout-title>Title</mdl-layout-title>
+            <div class="mdl-layout-icon"></div>
+            <mdl-layout-title>Hello!Angular</mdl-layout-title>
             <mdl-layout-spacer></mdl-layout-spacer>
             <!-- Navigation. We hide it in small screens. -->
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
-               <a class="mdl-navigation__link" >Link</a>
-               <a class="mdl-navigation__link" >Link</a>
-               <a class="mdl-navigation__link" >Link</a>
+            <nav class="mdl-navigation">
+               <a class="mdl-navigation__link" [routerLink]="['/']" [queryParams]="{'analytics':500}" [fragment]="'section1'">Home</a>
+               <a class="mdl-navigation__link" [routerLink]="['/user',id.value]" [preserveQueryParams]="true">User</a>
+               <a class="mdl-navigation__link" [routerLink]="['/form']" >ngForm</a>
+               <a class="mdl-navigation__link" [routerLink]="['/http']" >http</a>
+               <a class="mdl-navigation__link" [routerLink]="['/auth']" >auth</a>
+               <a class="mdl-navigation__link" [routerLink]="['/pipe']" >pipe</a>
+               <a class="mdl-navigation__link" [routerLink]="['/ngrx']" >ngRx/Store</a>
+               <a class="mdl-navigation__link" [routerLink]="['/http']" >DRS Test</a>
             </nav>
          </mdl-layout-header-row>
       </mdl-layout-header>
+       <!--
       <mdl-layout-drawer>
          <mdl-layout-title>Title</mdl-layout-title>
          <nav class="mdl-navigation">
@@ -20,31 +27,23 @@
             <a class="mdl-navigation__link" >Link</a>
          </nav>
       </mdl-layout-drawer>
+      -->
       <mdl-layout-content>
          <!-- Your content goes here -->
+         <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+
+                <input type="text" #id (input)="0"/>
+                <hr>
+                <router-outlet></router-outlet>
+                {{param}}
+            </div>
+
+         </div>
+
       </mdl-layout-content>
    </mdl-layout>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h1>Hello! Angular</h1>
-      <hr>
-      <a [routerLink]="['/']" [queryParams]="{'analytics':500}" [fragment]="'section1'">Home</a>
-      <input type="text" #id (input)="0"/>
-      <a [routerLink]="['/user',id.value]" [preserveQueryParams]="true">User</a>
-      <a [routerLink]="['/form']" >ngForm</a>
-      <a [routerLink]="['/http']" >http</a>
-      <a [routerLink]="['/auth']" >auth</a>
-      <a [routerLink]="['/pipe']" >pipe</a>
-      <a [routerLink]="['/ngrx']" >ngRx/Store</a>
-      <hr>
-
-    </div>
 
 
-  </div>
- <router-outlet></router-outlet>
-  {{param}}
 
-</div>

@@ -1,5 +1,6 @@
+import { Headers, Http, Response } from '@angular/http';
+
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 
 @Injectable()
@@ -7,6 +8,11 @@ export class HttpService {
 
   constructor(private http:Http) {
 
+  }
+
+  getChangeRequestData(){
+    return this.http.get("http://localhost:52460/crdata")
+                    .map((res:Response)=>res.json());
   }
 
   getData(){
